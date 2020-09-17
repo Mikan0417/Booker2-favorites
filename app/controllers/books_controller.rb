@@ -10,8 +10,8 @@ before_action :correct_user, only: [:edit, :update]
   end
   
   def show
-    @bookd = current_user.books.build
-    @book_new = Book.new
+    @book = current_user.books.build
+    @book = Book.new
     @book = Book.find(params[:id])
     @user = User.find(@book.user_id)
   end
@@ -55,7 +55,7 @@ before_action :correct_user, only: [:edit, :update]
   
   private
     def book_params
-      params.require(:book).permit(:title, :category, :body, :introduction)
+      params.require(:book).permit(:title, :body)
     end
   
     def correct_user

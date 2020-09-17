@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :user
-  attachment :image
+  attachment :profile_image
   
   validates :body, length: {maximum:200}
   validates :body, presence: true
