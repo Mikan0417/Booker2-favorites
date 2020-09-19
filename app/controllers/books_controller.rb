@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-before_action :authenticate_user!, only: [:new, :create, :index, :show, :edit, :update, :destroy]
+before_action :authenticate_user!
 before_action :correct_user, only: [:edit, :update]
 
   def index
@@ -23,8 +23,7 @@ before_action :correct_user, only: [:edit, :update]
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     if @book.save
-      redirect_to book_path(@book)
-      flash[:notice] = "Book was successfully created."
+      redirect_to book_path(@book), notice: "You have created book successfully."
     else
       @books = Book.all
       render :"index"
@@ -38,8 +37,7 @@ before_action :correct_user, only: [:edit, :update]
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-      redirect_to book_path(@book.id)
-      flash[:notice] = "Book was successfully update."
+      redirect_to book_path(@book.id), notice: "You have updated book successfully."
     else
       render 'edit'
       flash[:danger]= "Book"
@@ -50,7 +48,6 @@ before_action :correct_user, only: [:edit, :update]
     book = Book.find(params[:id])
     book.destroy
     redirect_to books_path
-    flash[:notice] = "Book was successfully destroyed"
   end
   
   private
