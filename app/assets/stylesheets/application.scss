@@ -35,3 +35,33 @@ p, ol, ul, td {
   line-height: 18px;
   margin: 33px;
 }
+
+a:visited {
+    color: #666;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+div.field, div.actions {
+    margin-bottom: 10px;
+}
