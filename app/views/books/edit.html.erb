@@ -15,15 +15,15 @@
           </div>
           <% end %>
           <div class="field row">
-            <label for="book_title">Title</label>
-            <input class="col-xs-12 book_title" type="text" value="a" name="book[title]" id="book_title">
+            <%= f.label :title, "Title" %>
+            <%= f.text_field :title, class:"col-xs-12 book_title" %>
           </div>
           <div class="field row">
-            <label for="book_opinion">Opinion</label>
-            <textarea class="col-xs-12 book_body" name="book[body]" id="book_body">a</textarea>
+            <%= f.label :body, "Opinion" %>
+            <%= f.text_area :body, class:"col-xs-12 book_body" %>
           </div>
           <div class="actions row">
-            <input type="submit" name="commit" value="Update Book" class="btn btn-primary col-xs-12" data-disable-with="Update Book">
+            <%= f.submit "Update Book", class:"btn btn-primary col-xs-12" %>
           </div>
         <% end %>
         <%= link_to "Show", book_path(@book) %> | <%= link_to "Back", books_path %>
