@@ -64,6 +64,7 @@
               <td><span><%= attachment_image_tag @user, :profile_image, :fill, 40, 40,fallback: "no_image.jpg"%></span></td>
               <td><span><%= link_to book.title, book_path(book)%></span></td>
               <td><span><%= book.body %></span></td>
+              <td><span>コメント数：<%= book.book_comments.count %></span></td>
             </tr>
           <% end %>
           </tbody>
